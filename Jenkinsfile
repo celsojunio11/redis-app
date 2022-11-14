@@ -3,12 +3,12 @@ pipeline {
           stages { 
                     stage('Build da imagem docker'){
                               steps{
-                                        sh 'sudo docker build -t devops/app .'
+                                        sh 'docker build -t devops/app .'
                               }
                     }
                     stage('Subir docker compose - redis e app'){
                               steps{
-                                        sh 'sudo docker-compose up --build -d'
+                                        sh 'docker-compose up --build -d'
                               }
                     }
                     stage('Sleep para subida de container'){
