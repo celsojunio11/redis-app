@@ -11,3 +11,4 @@ then
 else
           echo 'not ok - numero de visitantes'
           exit 1
+fi
