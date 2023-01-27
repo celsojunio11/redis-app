@@ -19,10 +19,17 @@ pipeline {
                     stage('Sonarqube validation'){
                               steps{
                                         script{
+<<<<<<< HEAD
                                         scannerHome = tool 'sonar-scanner';      
                                         }   
                                         withSonarQubeEnv('sonar-server'){
                                         sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=redis-app -Dsonar.sources=. -Dsonar.host.url=${env.SONAR_HOST_URL} -Dsonar.login=${env.SONAR_AUTH_TOKEN}"   
+=======
+                                            scannerHome = tool 'sonar-scanner';      
+                                        }   
+                                        withSonarQubeEnv('sonar-server'){
+                                            sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=redis-app -Dsonar.sources=. -Dsonar.host.url=${env.SONAR_HOST_URL} -Dsonar.login=${env.SONAR_AUTH_TOKEN}"   
+>>>>>>> a872edda850079d9781fe1b65d2103822279b2f3
                                         }
                               }
                     }
