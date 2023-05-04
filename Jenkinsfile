@@ -28,6 +28,7 @@ pipeline {
                                         sh "${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=redis-app -Dsonar.sources=. -Dsonar.host.url=${env.SONAR_HOST_URL} -Dsonar.login=${env.SONAR_AUTH_TOKEN}"      
                                         }   
                               }
+                              sh 'sleep 10'
                     }
                     stage('Quality Gate'){
                               steps{
